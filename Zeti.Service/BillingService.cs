@@ -14,6 +14,11 @@ namespace Zeti.Service
         protected static readonly IAssetRepository _assetRepository = RepositoryFactory.GetAssetRepository();
         protected static readonly IMileageRepository _mileageRepository = RepositoryFactory.GetMileageRepository();
 
+        /// <summary>
+        /// Calculates Operators billable
+        /// </summary>
+        /// <param name="OperatorId">The ID of the operator to be calculated</param>
+        /// <returns>A break down of the bill on rthe operator</returns>
         public GetOperatorBillingResponse GetTotalOperatorCost(string OperatorId)
         {
             GetOperatorBillingResponse response = new GetOperatorBillingResponse();

@@ -15,7 +15,7 @@ namespace Zeti.Service
         protected static readonly IAssetRepository _assetRepository = RepositoryFactory.GetAssetRepository();
 
         /// <summary>
-        /// This Api all the available assets that fits the category
+        /// Gets all available assets that fits the category
         /// </summary>
         /// <param name="Query"> This request take in a list of variables to determine the final retured collection</param>
         /// <returns>A collection of assets</returns>

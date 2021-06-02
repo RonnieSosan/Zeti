@@ -14,6 +14,11 @@ namespace Zeti.Service
     {
         protected static readonly IOperatorRepository _operatorRepository = RepositoryFactory.GetOperatorRepository();
 
+        /// <summary>
+        /// Gets a collection of asset operators based on the inserted query
+        /// </summary>
+        /// <param name="Query">This object is used to query through the record of assest</param>
+        /// <returns>A collection of assets</returns>
         public ICollection<AssetOperator> GetAllOperators(GetAllOperatorsRequest Query)
         {
             var operators = _operatorRepository.GetAll();
@@ -33,6 +38,11 @@ namespace Zeti.Service
             return operators.ToList();
         }
 
+        /// <summary>
+        /// Get an operator by ID
+        /// </summary>
+        /// <param name="Id">This method retuns an< operator by Id</param>
+        /// <returns></returns>
         public AssetOperator GetOperatorById(string Id)
         {
             var assetOperator = _operatorRepository.Get(Id);
