@@ -19,14 +19,14 @@ namespace Zeti.Service
         /// </summary>
         /// <param name="OperatorId">The ID of the operator to be calculated</param>
         /// <returns>A break down of the bill on rthe operator</returns>
-        public GetOperatorBillingResponse GetTotalOperatorCost(string OperatorId)
+        public GetOperatorBillingResponse GetTotalOperatorCost(BillRequest BillRequest)
         {
             GetOperatorBillingResponse response = new GetOperatorBillingResponse();
 
             try
             {
 
-                var mileageRecords = _mileageRepository.GetAll().Where(x => x.Operator.OperatorID == OperatorId);
+                var mileageRecords = _mileageRepository.GetAll().Where(x => x.Operator.OperatorID == BillRequest.OperatorId);
 
                 if (mileageRecords == null)
                 {

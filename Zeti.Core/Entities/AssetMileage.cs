@@ -10,5 +10,6 @@ namespace Zeti.Core.Entities
         public Asset Asset { get; set; }
         public AssetOperator Operator { get; set; }
         public decimal Miles { get; set; }
+        public DateTime Date { get; set; }
     }
 }

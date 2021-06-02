@@ -18,13 +18,29 @@ namespace Zeti.Persistence
                 MileageId = "1",
                 Asset = _assetRepository.Get("829fj"),
                 Operator = _operatorRepository.Get("nd92jdno2"),
-                Miles = 50
+                Miles = 50,
+                Date = DateTime.Now.Date.AddMonths(-1)
             },
             new AssetMileage{
                 MileageId = "2",
                 Asset = _assetRepository.Get("3g89j"),
                 Operator = _operatorRepository.Get("nd92jdno2"),
-                Miles = 150
+                Miles = 150,
+                Date = DateTime.Now.Date.AddMonths(-2)
+            },
+            new AssetMileage{
+                MileageId = "2",
+                Asset = _assetRepository.Get("3g89j"),
+                Operator = _operatorRepository.Get("nd92jdno2"),
+                Miles = 150,
+                Date = DateTime.Now.Date.AddMonths(-3)
+            },
+            new AssetMileage{
+                MileageId = "2",
+                Asset = _assetRepository.Get("3g89j"),
+                Operator = _operatorRepository.Get("nd92jdno2"),
+                Miles = 150,
+                Date = DateTime.Now.Date.AddMonths(-4)
             }
         };
         public AssetMileage Get(string id)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Zeti.Core.Contracts;
+using Zeti.Core.ServiceEntities;
 
 namespace Zeti.API.Controllers
 {
@@ -21,9 +22,9 @@ namespace Zeti.API.Controllers
 
         [HttpGet]
         [Route("GetTotalOperatorCost")]
-        public IActionResult GetTotalOperatorCost(string OperatorId)
+        public IActionResult GetTotalOperatorCost([FromQuery]BillRequest Payload)
         {
-            var response = BillingService.GetTotalOperatorCost(OperatorId);
+            var response = BillingService.GetTotalOperatorCost(Payload);
             return Ok(response);
         }
     }

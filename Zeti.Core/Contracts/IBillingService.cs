@@ -7,6 +7,6 @@ namespace Zeti.Core.Contracts
 {
     public interface IBillingService
     {
-        public GetOperatorBillingResponse GetTotalOperatorCost(string OperatorId);
+        public GetOperatorBillingResponse GetTotalOperatorCost(BillRequest BillRequest);
     }
 }
