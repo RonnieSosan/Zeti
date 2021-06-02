@@ -26,7 +26,7 @@ namespace Zeti.Service
             try
             {
 
-                var mileageRecords = _mileageRepository.GetAll().Where(x => x.Operator.OperatorID == BillRequest.OperatorId && x.Date >= BillRequest.startDate || x.Date <= BillRequest.EndDate);
+                var mileageRecords = _mileageRepository.GetAll().Where(x => x.Operator.OperatorID == BillRequest.OperatorId && x.Date <= BillRequest.startDate || x.Date >= BillRequest.EndDate);
 
                 if (mileageRecords == null)
                 {
