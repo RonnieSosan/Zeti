@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Zeti.Core\Zeti.Core.csproj" />
+    <ProjectReference Include="..\Zeti.Persistence\Zeti.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
