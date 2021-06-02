@@ -26,7 +26,7 @@ namespace Zeti.Service
             try
             {
 
-                var mileageRecords = _mileageRepository.GetAll().Where(x => x.Operator.OperatorID == BillRequest.OperatorId && x.Date <= BillRequest.startDate || x.Date >= BillRequest.EndDate);
+                var mileageRecords = _mileageRepository.GetAll().Where(x => x.Operator.OperatorID == BillRequest.OperatorId && x.Date >= BillRequest.startDate && x.Date <= BillRequest.EndDate);
 
                 if (mileageRecords == null)
                 {
@@ -41,7 +41,8 @@ namespace Zeti.Service
                 foreach (var item in mileageRecords)
                 {
                     response.TotalMileage += item.Miles;
-                    response.OperatorAssets.Add(item.Asset);
+                    if (!response.OperatorAssets.Contains(item.Asset))
+                        response.OperatorAssets.Add(item.Asset);
                 }
 
                 //if the cost of the asset is £0.207 per mile
